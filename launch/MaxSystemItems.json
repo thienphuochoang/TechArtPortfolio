@@ -1,0 +1,62 @@
+[	
+	{
+		"macro_text":"Validation Tool",
+		"macro_name":"puzzle_validation_tool",
+		"macro_tooltip":"This is a validation tool",
+		"command":"import importlib;\nfrom puzzle_max.validation.controller import main;\ntry:\n\timportlib.reload(main);\nexcept:\n\treload(main);",
+		"subItem":[]
+	},
+	{
+		"macro_text":"Normal Tool",
+		"macro_name":"puzzle_normal_tool",
+		"macro_tooltip":"This is a normal tool",
+		"command":"puzzle_max/normal_tool/function/vertex_normal_tools.ms",
+		"subItem":[]
+	},
+	{
+		"macro_text":"Exporter Tool",
+		"macro_name":"puzzle_exporter_tool",
+		"macro_tooltip":"This is an exporter tool",
+		"command":"import importlib;\nfrom puzzle_max.exporter.controller import main;\ntry:\n\timportlib.reload(main);\nexcept:\n\treload(main);",
+		"subItem":[]
+	},
+	{
+		"macro_text":"UV Tools",
+		"macro_name":"puzzle_uv_tool",
+		"macro_tooltip":"This is a collection of uv tools",
+		"command":"",
+		"subItem":
+		[
+			{
+				"macro_text":"Texel Density",
+				"macro_name":"puzzle_texel_density_tool",
+				"macro_tooltip":"This is a texel density tool",
+				"command":"puzzle_max/uv_tool/texel_density/function/texel_density_tool.ms",
+				"subItem":[]
+			}
+		]
+	},
+	{
+		"macro_text":"Baking Tool",
+		"macro_name":"puzzle_baking_tool",
+		"macro_tooltip":"This is a collection of baking tools",
+		"command":"",
+		"subItem":
+		[
+			{
+				"macro_text":"Bake AO Tool(Faogen)",
+				"macro_name":"puzzle_bake_ao_tool",
+				"macro_tooltip":"This is an AO baking tool",
+				"command":"puzzle_max/baking_tool/function/faogen_vertex_ao.ms",
+				"subItem":[]
+			}
+		]
+	},
+	{
+		"macro_text":"Snap Decal Tool",
+		"macro_name":"puzzle_snap_decal_tool",
+		"macro_tooltip":"This is a snap decal tool",
+		"command":"import importlib;\nfrom puzzle_max.decal_tool.controller import main;\ntry:\n\timportlib.reload(main);\nexcept:\n\treload(main);",
+		"subItem":[]
+	}
+]

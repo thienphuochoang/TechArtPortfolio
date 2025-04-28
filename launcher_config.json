@@ -1,0 +1,62 @@
+{
+  "common": {
+    "root_env_var": "PUZZLE_ROOT_PATH",
+    "external_modules_path": "modules/Lib/site-packages"
+  },
+  "maya": {
+    "versions": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "library": "puzzle_maya",
+    "exe_subpath": "bin/maya.exe",
+    "icon_keyword": "mayaico",
+    "registry_key_template": "SOFTWARE\\Autodesk\\Maya\\{version}\\Setup\\InstallPath",
+    "registry_value": "MAYA_INSTALL_LOCATION"
+  },
+  "3dsmax": {
+    "version_map": {
+      "19.0": "2017",
+      "20.0": "2018",
+      "21.0": "2019",
+      "22.0": "2020",
+      "23.0": "2021",
+      "24.0": "2022"
+    },
+    "library": "puzzle_max",
+    "exe_filename": "3dsmax.exe",
+    "icon_keyword": "icon_main",
+    "registry_key_template": "SOFTWARE\\Autodesk\\3dsMax\\{version}",
+    "registry_value": "Installdir"
+  },
+  "houdini": {
+    "library": "htp_houdini",
+    "registry_base_key": "SOFTWARE\\Side Effects Software",
+    "registry_value_install_path": "InstallPath",
+    "registry_value_version": "Version",
+    "exe_subpath": "bin/houdinifx.exe",
+    "icon_subdir": "houdini/pic",
+    "icon_filename": "minimizedicon.png"
+  },
+  "substance_designer": {
+	"library": "htp_substance_designer",
+	"registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+	"search_keyword": "Substance Designer",
+	"registry_value_install_path": "InstallLocation",
+	"registry_value_display_name": "DisplayName",
+	"registry_value_version": "DisplayVersion",
+	"exe_filename": "Substance Designer.exe",
+	"icon_subpath": "resources/icons/sbs.ico"
+  },
+  "uiconverter": {
+	"name": "Convert UI -> Python",
+	"library": "htp_ui_converter",
+	"icon_path": "lib/icon/convert.png",
+	"script_path": "modules/Scripts/pyside6-uic.exe",
+	"file_type": ".ui"
+  },
+  "symbols_2d_generator": {
+	"name": "2D Symbols Generator",
+	"library": "lib.ui.Symbols_2D_Generator_MainUI",
+	"ui_class": "Ui_MainWindow",
+	"icon_path": "lib/icon/2d_symbol_generator.png"
+  }
+  
+}
