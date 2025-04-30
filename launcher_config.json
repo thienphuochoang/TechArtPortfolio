@@ -4,7 +4,7 @@
     "external_modules_path": "modules/Lib/site-packages"
   },
   "maya": {
-    "versions": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "versions": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
     "library": "puzzle_maya",
     "exe_subpath": "bin/maya.exe",
     "icon_keyword": "mayaico",
@@ -18,7 +18,10 @@
       "21.0": "2019",
       "22.0": "2020",
       "23.0": "2021",
-      "24.0": "2022"
+      "24.0": "2022",
+      "25.0": "2023",
+      "26.0": "2024",
+      "27.0": "2025"
     },
     "library": "puzzle_max",
     "exe_filename": "3dsmax.exe",
@@ -54,7 +57,7 @@
   },
   "symbols_2d_generator": {
 	"name": "2D Symbols Generator",
-	"library": "lib.ui.Symbols_2D_Generator_MainUI",
+	"library": "puzzle_2d_symbol_generator.ui.Symbols_2D_Generator_MainUI",
 	"ui_class": "Ui_MainWindow",
 	"icon_path": "lib/icon/2d_symbol_generator.png"
   }

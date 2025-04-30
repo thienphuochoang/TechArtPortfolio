@@ -4,7 +4,7 @@ import importlib
 from PySide6.QtWidgets import QApplication, QMainWindow
 from launch.base_launcher import BaseLauncher
 from general.config_loader.config_loader import ConfigLoader
-
+from puzzle_2d_symbol_generator.controller.controller import Symbol2DGeneratorController
 
 class LauncherFunction(BaseLauncher):
     def __init__(self):
@@ -14,7 +14,7 @@ class LauncherFunction(BaseLauncher):
         ui_config = config["symbols_2d_generator"]
 
         self.name = ui_config["name"]
-        self.library = ui_config["library"]  # e.g., "lib.ui.2D_Symbols_Generator_MainUI"
+        self.library = ui_config["library"]  # e.g., "puzzle_2d_symbol_generator.ui.2D_Symbols_Generator_MainUI"
         self.ui_class_name = ui_config["ui_class"]  # e.g., "Ui_MainWindow"
         self.icon_path = os.path.join(self.root_path, ui_config["icon_path"]).replace("\\", "/")
 
@@ -25,27 +25,18 @@ class LauncherFunction(BaseLauncher):
         return [self.library, self.ui_class_name]
 
     def launch_ui(self):
-        """Create and display the UI using imported Ui_MainWindow."""
+        """Create and display the UI using Controller (Controller builds View + Model)."""
         try:
-            module = importlib.import_module(self.library)
-            UiClass = getattr(module, self.ui_class_name)
-
             app = QApplication.instance()
             if not app:
                 app = QApplication(sys.argv)
 
-            # Prevent closing the whole tray system
             app.setQuitOnLastWindowClosed(False)
 
-            # Store references as instance attributes
-            self.window = QMainWindow()
-            self.ui = UiClass()
-            self.ui.setupUi(self.window)
+            # Use Controller instead of UiClass
+            self.window = Symbol2DGeneratorController()
             self.window.show()
 
-            # Do not call sys.exit() in a plugin/tray context
-            # App event loop already running in main process
-            # Only call app.exec() if you're testing in isolation
             if not QApplication.instance().thread().isRunning():
                 app.exec()
 
