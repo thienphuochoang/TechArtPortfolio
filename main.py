@@ -17,7 +17,7 @@ if __name__ == '__main__':
     tray = TraySystem(icons, root_path)
     tray.show()
     tray.showMessage(
-        "PUZZLE Tool Collection",
+        "PUZZLE Tools Collection",
         f"Hello {getpass.getuser()}. Hope you have a great day!",
         QtGui.QIcon(icons.welcome_icon)
     )

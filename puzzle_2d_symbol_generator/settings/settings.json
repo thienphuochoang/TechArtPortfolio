@@ -1,0 +1,10 @@
+{
+	"api_key":"84e98aaf4d53744668ab23aec86f7db59c3b9ed94ef7f79b232e8d9e556b5fb5",
+    "search_term": "slot machine symbols sprite sheet",
+    "output_dir": "puzzle_2d_symbol_generator/dataset/google_dataset",
+    "num_images": 20,
+    "slice_output_dir": "dataset/sliced_symbols",
+    "caption_output_dir": "dataset/filtered_dataset",
+    "clip_threshold_filter": 0.85,
+    "clip_threshold_caption": 0.85
+}

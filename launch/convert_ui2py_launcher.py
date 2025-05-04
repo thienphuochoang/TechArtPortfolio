@@ -1,5 +1,6 @@
 import os
 import json
+from general.modules_importer.modules_manager import ModulesManager
 from launch.base_launcher import BaseLauncher
 from general.config_loader.config_loader import ConfigLoader
 
@@ -31,12 +32,13 @@ class LauncherFunction(BaseLauncher):
 
     def build_command(self, ui_file: str):
         py_file = ui_file[:-3] + ".py"
-        return [
+        cmd_line = [
             self.pyside2uic,
             ui_file.replace("\\", "/"),
             "-o",
             py_file.replace("\\", "/")
         ]
+        return cmd_line
 
     def convert(self):
         ui_files = self.search_files(self.root_path, self.file_type)
