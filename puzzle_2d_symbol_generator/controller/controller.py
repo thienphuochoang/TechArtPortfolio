@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QMainWindow
 from puzzle_2d_symbol_generator.function.symbol_2d_generator_function import Symbol2DGeneratorFunction
 from puzzle_2d_symbol_generator.ui.Symbols_2D_Generator_MainUI import Ui_MainWindow
 from puzzle_2d_symbol_generator.ui.Symbols_2D_Tag_Bar import Symbols_2D_Tag_Bar
+import os
 
 class Symbol2DGeneratorController(QMainWindow):
     def __init__(self):
@@ -9,8 +10,8 @@ class Symbol2DGeneratorController(QMainWindow):
         self.ui = None
         self.model = None
         self.tag_bar = None
-        self.initialize_ui()
         self.initialize_model()
+        self.initialize_ui()
         self.setup_connections()
 
     def initialize_ui(self):
@@ -18,6 +19,7 @@ class Symbol2DGeneratorController(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.tag_bar = Symbols_2D_Tag_Bar()
+        self.load_dataset_types()
 
     def initialize_model(self):
         # Instantiate the model
@@ -39,3 +41,12 @@ class Symbol2DGeneratorController(QMainWindow):
     def download_and_delete_irrelevant_images(self):
         self.download_on_google()
         self.delete_irrelevant_images()
+
+    def load_dataset_types(self):
+        dataset_folders = self.model.get_dataset_folders()
+        if dataset_folders:
+            self.ui.cbbDatasetType.clear()
+            self.ui.cbbDatasetType.addItems(dataset_folders)
+            self.ui.cbbDatasetType.setCurrentIndex(0)
+        else:
+            print("No dataset folders found.")

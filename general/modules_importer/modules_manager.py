@@ -45,29 +45,3 @@ class ModulesManager:
                     modules.append(imported)
 
         return modules
-
-
-    # @staticmethod
-    # def importAllSoftwareFunction(self, root_path):
-    # 	pass
-    # 	# modules_list = self.importModulesFromLaunchFolder(root_path)
-    # 	# for module in modules_list:
-    # 	# 	print(module)
-    # 	# for module in modules_list:
-    # 	# 	try:
-    # 	# 		launcher = module.LauncherFunction()
-    # 	# 		module_info = launcher.main()
-    # 	# 		if module_info:
-    # 	# 			for name, info in module_info.items():
-    # 	# 				tool_info = TrayItem.ToolInfo(
-    # 	# 					name=name,
-    # 	# 					icon_path=info[1],
-    # 	# 					exe_path=info[2],
-    # 	# 					lib=info[3],
-    # 	# 					command=info[4]
-    # 	# 				)
-    # 	# 				tray_item = TrayItem(tool=tool_info, parent=self.menu)
-    # 	# 				self.menu.addAction(tray_item)
-    # 	# 	except Exception as e:
-    # 	# 		print(f"⚠️ Failed to load tool from {module}: {e}")
-    # 	# self.menu.addSeparator()

@@ -1,14 +1,20 @@
 from PySide6 import QtWidgets, QtGui
+from general.config_loader.config_loader import ConfigLoader
 from general.modules_importer.modules_manager import ModulesManager
 from core.tray_item import TrayItem
+import os
 
 class TraySystem(QtWidgets.QSystemTrayIcon):
     def __init__(self, icon_manager, root_path, parent=None):
         super().__init__(QtGui.QIcon(icon_manager.main_icon), parent)
         self.setToolTip("PUZZLE Tool Collection")
         self.menu = QtWidgets.QMenu(parent)
+        self.root_path = root_path
 
-        self.load_tools(icon_manager, root_path)
+        config = ConfigLoader.load_config()
+        self.ui_style = config["common"]["ui_style_sheet"]
+
+        self.load_tools(icon_manager, self.root_path)
         self.menu.addSeparator()
 
         exit_action = self.menu.addAction("Exit")
@@ -16,6 +22,10 @@ class TraySystem(QtWidgets.QSystemTrayIcon):
         exit_action.triggered.connect(lambda: QtWidgets.QApplication.quit())
         self.setContextMenu(self.menu)
         self.activated.connect(self.show_menu)
+
+    def getCustomStyle(self) -> str:
+        style_path = os.path.join(self.root_path, self.ui_style).replace("\\", "/")
+        return style_path
 
     def show_menu(self, reason):
         if reason == QtWidgets.QSystemTrayIcon.Trigger:

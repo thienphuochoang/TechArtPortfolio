@@ -1,7 +1,8 @@
 {
   "common": {
     "root_env_var": "PUZZLE_ROOT_PATH",
-    "external_modules_path": "modules/Lib/site-packages"
+    "external_modules_path": "modules/Lib/site-packages",
+	"ui_style_sheet": "lib/ui/styles/Aqua.qss"
   },
   "maya": {
     "versions": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
@@ -30,7 +31,7 @@
     "registry_value": "Installdir"
   },
   "houdini": {
-    "library": "htp_houdini",
+    "library": "puzzle_houdini",
     "registry_base_key": "SOFTWARE\\Side Effects Software",
     "registry_value_install_path": "InstallPath",
     "registry_value_version": "Version",
@@ -39,18 +40,18 @@
     "icon_filename": "minimizedicon.png"
   },
   "substance_designer": {
-	"library": "htp_substance_designer",
-	"registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
-	"search_keyword": "Substance Designer",
+	"library": "puzzle_substance_designer",
+	"registry_key": "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+	"search_keyword": "Substance 3D Designer",
 	"registry_value_install_path": "InstallLocation",
 	"registry_value_display_name": "DisplayName",
 	"registry_value_version": "DisplayVersion",
-	"exe_filename": "Substance Designer.exe",
+	"exe_filename": "Adobe Substance 3D Designer.exe",
 	"icon_subpath": "resources/icons/sbs.ico"
   },
   "uiconverter": {
 	"name": "Convert UI -> Python",
-	"library": "htp_ui_converter",
+	"library": "puzzle_ui_converter",
 	"icon_path": "lib/icon/convert.png",
 	"script_path": "modules/Scripts/pyside6-uic.exe",
 	"file_type": ".ui"

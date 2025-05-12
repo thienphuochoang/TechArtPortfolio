@@ -54,6 +54,12 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.btnDownloadFromGoogle = QPushButton(self.datasetGroupBox)
+        self.btnDownloadFromGoogle.setObjectName(u"btnDownloadFromGoogle")
+        self.btnDownloadFromGoogle.setMinimumSize(QSize(50, 50))
+
+        self.verticalLayout.addWidget(self.btnDownloadFromGoogle)
+
         self.btnAutoTag = QPushButton(self.datasetGroupBox)
         self.btnAutoTag.setObjectName(u"btnAutoTag")
         self.btnAutoTag.setMinimumSize(QSize(50, 50))
@@ -71,11 +77,15 @@ class Ui_MainWindow(object):
 
         self.lstDataset = QListWidget(self.datasetGroupBox)
         self.lstDataset.setObjectName(u"lstDataset")
+        self.lstDataset.setStyleSheet(u"")
+        self.lstDataset.setFrameShape(QFrame.Shape.Panel)
+        self.lstDataset.setFrameShadow(QFrame.Shadow.Plain)
 
         self.gridLayout_2.addWidget(self.lstDataset, 3, 0, 1, 1)
 
         self.cbbDatasetType = QComboBox(self.datasetGroupBox)
         self.cbbDatasetType.setObjectName(u"cbbDatasetType")
+        self.cbbDatasetType.setStyleSheet(u"")
 
         self.gridLayout_2.addWidget(self.cbbDatasetType, 0, 0, 1, 1)
 
@@ -90,8 +100,11 @@ class Ui_MainWindow(object):
 
         self.widgetTagArea = QWidget(self.datasetGroupBox)
         self.widgetTagArea.setObjectName(u"widgetTagArea")
+        self.widgetTagArea.setStyleSheet(u"")
         self.verticalLayout_2 = QVBoxLayout(self.widgetTagArea)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
 
         self.gridLayout_2.addWidget(self.widgetTagArea, 1, 0, 1, 1)
 
@@ -119,6 +132,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.lbSymbolsGeneratorTitle.setText(QCoreApplication.translate("MainWindow", u"2D Symbols Generator", None))
         self.datasetGroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Dataset", None))
+        self.btnDownloadFromGoogle.setText(QCoreApplication.translate("MainWindow", u"Download ref\n"
+" from Google", None))
         self.btnAutoTag.setText(QCoreApplication.translate("MainWindow", u"Auto Tag", None))
         self.btnTag.setText(QCoreApplication.translate("MainWindow", u"Manual Tag", None))
         self.btnFilter.setText(QCoreApplication.translate("MainWindow", u"Filter Tag", None))

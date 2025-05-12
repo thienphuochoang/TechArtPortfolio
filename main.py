@@ -21,4 +21,8 @@ if __name__ == '__main__':
         f"Hello {getpass.getuser()}. Hope you have a great day!",
         QtGui.QIcon(icons.welcome_icon)
     )
+
+    app.setStyle('Fusion')
+    #app.setStyleSheet(open(tray.getCustomStyle()).read())
+
     sys.exit(app.exec())

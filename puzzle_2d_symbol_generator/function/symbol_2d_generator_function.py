@@ -5,18 +5,29 @@ from io import BytesIO
 from transformers import CLIPProcessor, CLIPModel, BlipProcessor, BlipForConditionalGeneration
 import torch
 from PIL import Image
+from typing import List
 
 class Symbol2DGeneratorFunction:
     def __init__(self):
         self.settings_path = "puzzle_2d_symbol_generator/settings/settings.json"
         self.settings = ConfigLoader.load_config(self.settings_path)
+        self.root_path = ConfigLoader.get_root_path()
 
         self.api_key = self.settings["api_key"]
         self.search_term = self.settings["search_term"]
-        self.output_dir = os.path.join(ConfigLoader.get_root_path(), self.settings["output_dir"]).replace("\\", "/")
+        self.output_dir = os.path.join(self.root_path, self.settings["output_dir"]).replace("\\", "/")
         self.num_images = self.settings.get("num_images", 20)  # fallback if not defined
 
         os.makedirs(self.output_dir, exist_ok=True)
+
+    def get_dataset_folders(self) -> List[str]:
+        dataset_dir = os.path.join(self.root_path, "puzzle_2d_symbol_generator", "dataset")
+        if not os.path.exists(dataset_dir):
+            print("Dataset folder not found:", dataset_dir)
+            return []
+
+        folder_names = [f for f in os.listdir(dataset_dir) if os.path.isdir(os.path.join(dataset_dir, f))]
+        return folder_names
 
     def search_on_google(self):
         params = {
