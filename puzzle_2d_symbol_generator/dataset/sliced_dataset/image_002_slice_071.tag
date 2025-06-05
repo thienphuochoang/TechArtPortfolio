@@ -1,0 +1,1 @@
+a tennis ball and racket on a blue background

@@ -1,0 +1,1 @@
+a purple and white circle with a white dot

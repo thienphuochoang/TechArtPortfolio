@@ -1,0 +1,1 @@
+a green square icon with two slices of orange

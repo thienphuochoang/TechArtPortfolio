@@ -1,0 +1,1 @@
+a pink ball with a black background

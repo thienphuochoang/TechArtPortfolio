@@ -1,0 +1,1 @@
+a purple and blue disc with a white center

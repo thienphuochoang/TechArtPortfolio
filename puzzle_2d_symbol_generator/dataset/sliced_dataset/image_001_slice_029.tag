@@ -1,0 +1,1 @@
+a blue square icon with green olives

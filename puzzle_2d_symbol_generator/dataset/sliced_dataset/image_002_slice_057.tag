@@ -1,0 +1,1 @@
+purple christmas balls on a blue background

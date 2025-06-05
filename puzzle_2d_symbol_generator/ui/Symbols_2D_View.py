@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGraphicsView, QHBoxLayout, QListWidget,
-    QListWidgetItem, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QGraphicsView, QHBoxLayout, QSizePolicy,
+    QTextEdit, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -30,10 +30,10 @@ class Ui_Form(object):
 
         self.horizontalLayout.addWidget(self.graphicsImage)
 
-        self.lstImageTag = QListWidget(Form)
-        self.lstImageTag.setObjectName(u"lstImageTag")
+        self.txtEditImageTag = QTextEdit(Form)
+        self.txtEditImageTag.setObjectName(u"txtEditImageTag")
 
-        self.horizontalLayout.addWidget(self.lstImageTag)
+        self.horizontalLayout.addWidget(self.txtEditImageTag)
 
 
         self.retranslateUi(Form)

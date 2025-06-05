@@ -1,0 +1,1 @@
+a purple square icon with a red apple

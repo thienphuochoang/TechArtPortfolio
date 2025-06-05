@@ -1,0 +1,1 @@
+a purple and green background with a black and white background

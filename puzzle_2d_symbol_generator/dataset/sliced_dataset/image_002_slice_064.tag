@@ -1,0 +1,1 @@
+a red apple with green leaves on a blue background

@@ -1,0 +1,1 @@
+the app icon for the app store, with a cherry on it

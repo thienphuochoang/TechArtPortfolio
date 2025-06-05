@@ -33,7 +33,7 @@ class Symbols_2D_Tag_Bar(QWidget):
         self.line_edit.clear()
 
     def add_tag(self, text):
-        tag_widget = Symbols_2D_Custom_Tag(text, self.remove_tag)
+        tag_widget = Symbols2DCustomTag(text, self.remove_tag)
         self.tags.append(text)
         self.flow_layout.removeWidget(self.line_edit)
         self.flow_layout.addWidget(tag_widget)

@@ -1,0 +1,1 @@
+the logo for the game, the game is a stylized leaf with a green leaf on top

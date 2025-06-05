@@ -1,0 +1,1 @@
+a pink background with a circular shape

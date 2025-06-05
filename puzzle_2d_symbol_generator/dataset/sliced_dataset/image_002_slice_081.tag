@@ -1,0 +1,1 @@
+a purple ball with a white stripe on it

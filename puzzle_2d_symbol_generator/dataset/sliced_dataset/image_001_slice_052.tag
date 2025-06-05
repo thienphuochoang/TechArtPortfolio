@@ -1,0 +1,1 @@
+a glass bottle with a red liquid inside

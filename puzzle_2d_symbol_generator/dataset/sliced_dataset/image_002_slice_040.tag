@@ -1,0 +1,1 @@
+a blue square button with a black background

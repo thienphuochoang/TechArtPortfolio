@@ -1,0 +1,1 @@
+a square icon with a dark background

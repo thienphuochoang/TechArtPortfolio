@@ -1,0 +1,1 @@
+an apple icon with a green leaf on top

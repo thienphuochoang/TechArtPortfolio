@@ -1,0 +1,1 @@
+a yellow slice of fruit on a blue background

@@ -1,0 +1,1 @@
+four red apples with green leaves on blue background - free vector

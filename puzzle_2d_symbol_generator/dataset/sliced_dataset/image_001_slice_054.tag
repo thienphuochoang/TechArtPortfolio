@@ -1,0 +1,1 @@
+a plate with two apples and a knife

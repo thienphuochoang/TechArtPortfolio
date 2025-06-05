@@ -1,0 +1,1 @@
+a red square icon with an apple on it

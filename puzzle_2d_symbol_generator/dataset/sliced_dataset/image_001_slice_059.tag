@@ -1,0 +1,1 @@
+a yellow background with a white circle

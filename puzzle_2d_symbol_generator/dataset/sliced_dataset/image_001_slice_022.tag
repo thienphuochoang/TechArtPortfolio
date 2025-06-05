@@ -1,0 +1,1 @@
+a red square icon with a green leaf on top

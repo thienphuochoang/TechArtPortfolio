@@ -1,0 +1,1 @@
+a blue and green icon with two oranges

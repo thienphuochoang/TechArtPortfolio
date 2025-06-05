@@ -1,0 +1,1 @@
+a green candle with a white background

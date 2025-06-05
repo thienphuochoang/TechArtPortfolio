@@ -1,0 +1,1 @@
+the app icon for the app, with an orange on it

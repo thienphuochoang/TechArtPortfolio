@@ -1,0 +1,1 @@
+a triangle shaped object with a red and yellow triangle

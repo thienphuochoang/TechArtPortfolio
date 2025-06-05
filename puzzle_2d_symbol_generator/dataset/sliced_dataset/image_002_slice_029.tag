@@ -1,0 +1,1 @@
+a white and blue light shining on a black background

@@ -1,0 +1,1 @@
+a lemon and a slice of lemon on a green background

@@ -1,0 +1,1 @@
+a green leaf with a white background

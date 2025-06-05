@@ -1,0 +1,1 @@
+a red apple icon on a blue background

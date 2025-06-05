@@ -1,0 +1,1 @@
+a heart shaped object with a red background

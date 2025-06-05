@@ -1,0 +1,1 @@
+a purple and black background with a white circle

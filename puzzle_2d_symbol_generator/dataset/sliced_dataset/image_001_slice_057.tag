@@ -1,0 +1,1 @@
+a tennis ball with a green and white background

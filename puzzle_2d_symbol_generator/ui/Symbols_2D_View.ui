@@ -18,7 +18,7 @@
     <widget class="QGraphicsView" name="graphicsImage"/>
    </item>
    <item>
-    <widget class="QListWidget" name="lstImageTag"/>
+    <widget class="QTextEdit" name="txtEditImageTag"/>
    </item>
   </layout>
  </widget>

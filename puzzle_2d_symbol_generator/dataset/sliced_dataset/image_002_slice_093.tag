@@ -1,0 +1,1 @@
+a green leaf with a blue sky in the background

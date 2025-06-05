@@ -1,0 +1,1 @@
+a fruit icon with a green leaf on top

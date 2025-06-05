@@ -1,0 +1,1 @@
+a lemon slice on a blue background

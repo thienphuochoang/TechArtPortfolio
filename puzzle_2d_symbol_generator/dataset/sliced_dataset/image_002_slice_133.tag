@@ -1,0 +1,1 @@
+a blue background with two oranges and a green leaf

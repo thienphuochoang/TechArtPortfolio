@@ -1,0 +1,1 @@
+a fruit with a slice cut in half

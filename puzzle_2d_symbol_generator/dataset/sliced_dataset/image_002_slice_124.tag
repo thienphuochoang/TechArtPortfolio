@@ -1,0 +1,1 @@
+a bunch of purple candles with a candle in the middle

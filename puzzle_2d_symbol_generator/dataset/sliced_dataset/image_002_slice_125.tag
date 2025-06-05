@@ -1,0 +1,1 @@
+a set of four different fruits in a tray

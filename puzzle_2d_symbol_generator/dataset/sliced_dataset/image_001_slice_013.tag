@@ -1,0 +1,1 @@
+a blue background with an orange apple

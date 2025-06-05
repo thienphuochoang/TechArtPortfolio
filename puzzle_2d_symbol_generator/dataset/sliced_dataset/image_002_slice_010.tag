@@ -1,0 +1,1 @@
+a fruit icon with a slice of orange
