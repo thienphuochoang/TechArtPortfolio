@@ -18,5 +18,20 @@ class ConfigLoader:
     def load_config(filename="launcher_config.json") -> dict:
         root_path = ConfigLoader.get_root_path()
         config_path = os.path.join(root_path, filename)
-        with open(config_path, "r") as f:
-            return json.load(f)
+        print("[ConfigLoader] looking for config at:", config_path)
+
+        try:
+            with open(config_path, "r") as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            print("[ConfigLoader] file not found:", config_path)
+            return {}
+        except json.JSONDecodeError as e:
+            print("[ConfigLoader] JSON error:", e)
+            return {}
+
+        # if we get here, we loaded something
+        print("[ConfigLoader] loaded config")
+        # optional: show top-level keys
+        print("[ConfigLoader] keys:", list(data.keys()))
+        return data

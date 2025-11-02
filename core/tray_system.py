@@ -11,8 +11,12 @@ class TraySystem(QtWidgets.QSystemTrayIcon):
         self.menu = QtWidgets.QMenu(parent)
         self.root_path = root_path
 
-        config = ConfigLoader.load_config()
-        self.ui_style = config["common"]["ui_style_sheet"]
+        try:
+            config = ConfigLoader.load_config()
+            self.ui_style = config.get("common", {}).get("ui_style_sheet", "")
+        except Exception as e:
+            print("[TraySystem] config load failed:", e)
+            self.ui_style = ""
 
         self.load_tools(icon_manager, self.root_path)
         self.menu.addSeparator()
@@ -32,34 +36,36 @@ class TraySystem(QtWidgets.QSystemTrayIcon):
             self.contextMenu().popup(QtGui.QCursor.pos())
 
     def load_tools(self, icon_manager, root_path):
-        modules = ModulesManager.import_modules_from_folder(
-            root_path=root_path,
-            subfolder="launch",
-            prefix="launch"
-        )
+        try:
+            modules = ModulesManager.import_modules_from_folder(
+                root_path=root_path,
+                subfolder="launch",
+                prefix="launch"
+            )
+        except Exception as e:
+            print("[TraySystem] failed to import modules:", e)
+            return
 
         for mod in modules:
-            try:
-                if not hasattr(mod, "LauncherFunction"):
-                    print(f"[Warning] Module {mod.__name__} does not define 'LauncherFunction'")
-                    continue
+            if not hasattr(mod, "LauncherFunction"):
+                print(f"[Warning] Module {mod.__name__} does not define 'LauncherFunction'")
+                continue
 
+            try:
                 launcher = mod.LauncherFunction()
                 info = launcher.main()
-
-                for name, data in info.items():
-                    tool_info = TrayItem.ToolInfo(
-                        name=name,
-                        icon_path=data[1],
-                        exe_path=data[2],
-                        lib=data[3],
-                        command=data[4],
-                        launcher=launcher
-                    )
-                    item = TrayItem(tool=tool_info, parent=self.menu)
-                    self.menu.addAction(item)
-
             except Exception as e:
-                print(f"[Error] Failed to load tool from {mod.__name__}: {e}")
-                import traceback
-                traceback.print_exc()
+                print(f"[TraySystem] launcher {mod.__name__} failed:", e)
+                continue
+
+            for name, data in info.items():
+                tool_info = TrayItem.ToolInfo(
+                    name=name,
+                    icon_path=data[1],
+                    exe_path=data[2],
+                    lib=data[3],
+                    command=data[4],
+                    launcher=launcher
+                )
+                item = TrayItem(tool=tool_info, parent=self.menu)
+                self.menu.addAction(item)
